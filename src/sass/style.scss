@@ -11,10 +11,15 @@ body {
   place-items: center;
   min-height: 100vh;
   background-color: variables.$transparentWhite;
-  margin-inline: 1rem;
+  margin-top: 2rem;
+  margin-inline: 2rem;
 
-  @media (max-width: 400px) {
-    margin-top: 2rem;
+  @media (min-width: 1024px) {
+    margin-inline: 5rem;
+  }
+
+  @media (min-width: 1440px) {
+    margin-inline: 16.25rem;
   }
 }
 
@@ -35,6 +40,11 @@ h4 {
 
 .grid {
   display: grid;
+  max-width: 920px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .card {
@@ -43,9 +53,14 @@ h4 {
   background-position: 4rem 2.5rem;
   padding: 4rem;
 
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+  }
+
   h1 {
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 3rem;
     margin-bottom: 2.5rem;
   }
@@ -60,10 +75,21 @@ h4 {
 
   a {
     background-color: variables.$veryLightGray;
+    border: 2px solid transparent;
     border-radius: 2rem;
     padding: 0.8rem 2rem;
     text-decoration: none;
     color: variables.$brightOrange;
+    transition: all 400ms;
+    width: fit-content;
+    height: max-content;
+    align-self: end;
+
+    &:hover {
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid variables.$transparentWhite;
+    }
   }
 }
 
@@ -71,10 +97,17 @@ h4 {
   background-image: url("../assets/images/icon-sedans.svg");
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .card:nth-child(1) {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card:nth-child(1) {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
 }
 
@@ -84,16 +117,30 @@ h4 {
 
   a {
     color: variables.$darkCyan;
+
+    &:hover {
+      color: #fff;
+    }
   }
 }
 .card:nth-child(3) {
   background-color: variables.$veryDarkCyan;
   background-image: url("../assets/images/icon-luxury.svg");
 
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  @media (max-width: 600px) {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+  @media (min-width: 1024px) {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
   a {
     color: variables.$veryDarkCyan;
+    &:hover {
+      color: #fff;
+    }
   }
 }
 
