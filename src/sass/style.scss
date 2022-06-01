@@ -1,0 +1,106 @@
+@use "sass-utils/variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: variables.$transparentWhite;
+  margin-inline: 1rem;
+
+  @media (max-width: 400px) {
+    margin-top: 2rem;
+  }
+}
+
+body,
+textarea,
+button,
+input {
+  font-family: variables.$text;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: variables.$primary;
+  color: variables.$veryLightGray;
+}
+
+.grid {
+  display: grid;
+}
+
+.card {
+  background-color: variables.$brightOrange;
+  background-repeat: no-repeat;
+  background-position: 4rem 2.5rem;
+  padding: 4rem;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  p {
+    color: variables.$transparentWhite;
+    font-size: 14px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+
+  a {
+    background-color: variables.$veryLightGray;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    color: variables.$brightOrange;
+  }
+}
+
+.card:nth-child(1) {
+  background-image: url("../assets/images/icon-sedans.svg");
+}
+
+@media (max-width: 400px) {
+  .card:nth-child(1) {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+}
+
+.card:nth-child(2) {
+  background-image: url("../assets/images/icon-suvs.svg");
+  background-color: variables.$darkCyan;
+
+  a {
+    color: variables.$darkCyan;
+  }
+}
+.card:nth-child(3) {
+  background-color: variables.$veryDarkCyan;
+  background-image: url("../assets/images/icon-luxury.svg");
+
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  a {
+    color: variables.$veryDarkCyan;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
