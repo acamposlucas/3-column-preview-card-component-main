@@ -97,10 +97,14 @@ h4 {
   background-image: url("../assets/images/icon-sedans.svg");
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1023px) {
   .card:nth-child(1) {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
+  }
+  .card:nth-child(3) {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
   }
 }
 
